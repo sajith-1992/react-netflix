@@ -1,0 +1,21 @@
+.banner{
+    background-image: url('https://wallpaperaccess.com/full/2703652.png');
+    background-size: cover;
+    height: 500px;
+    color: white;
+
+
+
+}
+.content{
+    padding-top: 140px;
+    height: 190px;
+
+
+}
+.title{
+    font-size: 3rem;
+    font-weight:800;
+    padding-bottom: 0.3rem;
+
+}
