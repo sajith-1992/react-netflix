@@ -5,7 +5,7 @@ function Banner() {
     <div className='banner'>
 
         <div  className='content'>
-         <h1  className='title'>movie name</h1>
+         <h1  className='title'>Movie Name</h1>
          <div className='banner_button' >
             <button className='button' >play</button>
             <button className='button' >Mylist</button>
@@ -14,7 +14,10 @@ function Banner() {
 
 
         </div>
-        
+      
+        <div className="fade">
+            
+        </div>
       
     </div>
   )
