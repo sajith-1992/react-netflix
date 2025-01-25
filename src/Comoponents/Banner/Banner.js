@@ -3,12 +3,12 @@ import { API_Key } from '../../Constants/constant'
 import axios from '../../axios'
 import  './banner.css'
 function Banner() {
-  // useEffect(() => {
-  //   axios.get(`trending/movie/week?language=en-US&api_key=${API_Key}`).then((Response)=>{
-  //     console.log(Response.data)
-  //   }) 
+  useEffect(() => {
+    axios.get(`trending/movie/week?language=en-US&api_key=${API_Key}`).then((Response)=>{
+      console.log(Response.data)
+    }) 
    
-  // }, [])
+  }, [])
   
  
   
