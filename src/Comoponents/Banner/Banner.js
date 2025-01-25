@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react'
+import { API_Key } from '../../Constants/constant'
 import axios from '../../axios'
 import  './banner.css'
 function Banner() {
-  useEffect(() => {
-    axios.get('trending/movie/week?language=en-US&api_key=12b30436e8cbc461e1a11c11613a2491') 
+  // useEffect(() => {
+  //   axios.get(`trending/movie/week?language=en-US&api_key=${API_Key}`).then((Response)=>{
+  //     console.log(Response.data)
+  //   }) 
    
-  }, [])
+  // }, [])
   
  
   
