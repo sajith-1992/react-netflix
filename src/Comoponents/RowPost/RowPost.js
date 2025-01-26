@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useEffect,useState} from 'react'
+import axios from '../../axios'
+import { API_Key } from '../../Constants/constant'
+
 import './RowPost.css'
 
-function post() {
+function RowPost() {
+
+
+  useEffect(() => {
+    axios.get(`discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc'&api_key=${API_Key}`).then((response)=>{
+      console.log(Response.data)
+    } 
+
+    )
+  
+
+  }, [])
+  
+
+
   return (
     <div className='row'>
       <h1>Titile</h1>
@@ -41,4 +58,4 @@ function post() {
   )
 }
 
-export default post
+export default Rowpost
