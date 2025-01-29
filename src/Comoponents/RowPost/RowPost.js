@@ -1,6 +1,7 @@
 import React, { useEffect,useState} from 'react'
 import axios from '../../axios'
- import { imgBaseUrl} from '../../Constants/constant'
+ import { imgBaseUrl,API_Key } from '../../Constants/constant'
+ import  YouTube from 'react-youtube'
 
 import './RowPost.css'
 
@@ -16,7 +17,33 @@ function RowPost(props) {
    })
   },[props.url])
 
+  const opts = {
+    height: '390',
+    width: '640',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 0,
+    },
+  };
 
+
+
+
+
+
+
+
+
+
+
+
+  const vedioHandler=(id)=>{
+    axios.get(`${id}/videos?language=en-US'&api_key=${API_Key}`).then((Response)=>{
+      console.log(Response.data)
+    })
+    
+
+  }
   
   
 
@@ -27,12 +54,16 @@ function RowPost(props) {
       <div className='posters' >
 
 
-        {post.map((obj)=><img  className={ props.isSmall ? 'smallposter' :'poster'} src={`${imgBaseUrl + obj.backdrop_path }`}alt='post' />)
+        {post.map((obj)=><img onClick={()=>vedioHandler(obj.id)} className={ props.isSmall ? 'smallposter' :'poster'} src={`${imgBaseUrl + obj.backdrop_path }`}alt='post' />)
        
 }
         
 
       </div>
+            
+            
+            <YouTube videoId="62gSxdSkUsQ" opts={opts} />
+
     </div>
   )
 }
