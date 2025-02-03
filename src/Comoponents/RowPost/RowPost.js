@@ -8,7 +8,7 @@ import './RowPost.css'
 
 function RowPost(props) {
   const[post,setPost]=useState([])
-  const[vedioUrl,setvedioUrl]=useState()
+  const[vedioUrl,setvedioUrl]=useState("")
 
   useEffect(()=>{
    axios.get(props.url).then((Response)=>{
@@ -41,12 +41,13 @@ function RowPost(props) {
 
   const vedioHandler=(id)=>{
 
-    console.log(id)
+    
     axios.get(`movie/${id}/videos?language=en-US&api_key=${API_Key}`).then(Response=>{
-      console.log(Response.data)
-      if(Response.data.result.length !== 0){
-        setvedioUrl(Response.data.results[0]
- )
+      // console.log(Response.data.results[0])
+      if(Response.data.results.length !== 0){
+        setvedioUrl(Response.data.results[0].key )
+
+        
       }else{
         console.log("Array Empty")
       }
@@ -73,7 +74,13 @@ function RowPost(props) {
       </div>
             
             
-       {  url && <YouTube videoId= opts={opts} />}
+       {  vedioUrl && 
+       
+        <YouTube videoId= {vedioUrl} opts={opts} />
+      
+        }
+
+
 
     </div>
   )
